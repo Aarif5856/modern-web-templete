@@ -1,0 +1,119 @@
+{
+  "site": {
+    "name": "ModernWeb",
+    "tagline": "Build Something Amazing Today",
+    "description": "Create stunning websites with our modern, responsive template. Perfect for businesses, startups, and creative professionals.",
+    "url": "https://yourwebsite.com",
+    "email": "hello@modernweb.com",
+    "phone": "+1 (555) 123-4567",
+    "address": "123 Web Street, Digital City"
+  },
+  "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "accent": "#10B981",
+    "text": "#111827",
+    "textLight": "#6B7280",
+    "background": "#FFFFFF",
+    "backgroundLight": "#F9FAFB"
+  },
+  "social": {
+    "facebook": "https://facebook.com/yourpage",
+    "twitter": "https://twitter.com/yourhandle",
+    "linkedin": "https://linkedin.com/company/yourcompany",
+    "instagram": "https://instagram.com/yourhandle"
+  },
+  "features": [
+    {
+      "icon": "fas fa-rocket",
+      "title": "Fast Performance",
+      "description": "Lightning-fast loading speeds and optimized performance for the best user experience."
+    },
+    {
+      "icon": "fas fa-mobile-alt",
+      "title": "Mobile First",
+      "description": "Fully responsive design that looks perfect on all devices and screen sizes."
+    },
+    {
+      "icon": "fas fa-shield-alt",
+      "title": "Secure & Safe",
+      "description": "Enterprise-grade security with advanced encryption and data protection."
+    },
+    {
+      "icon": "fas fa-cog",
+      "title": "Easy to Use",
+      "description": "Intuitive interface and user-friendly design that anyone can master quickly."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Sarah Anderson",
+      "role": "CEO, TechStart",
+      "avatar": "SA",
+      "text": "This template saved us weeks of development time. The design is modern, clean, and our customers love it!",
+      "rating": 5
+    },
+    {
+      "name": "Michael Johnson",
+      "role": "Founder, CreativeStudio",
+      "avatar": "MJ",
+      "text": "Outstanding quality and attention to detail. The responsive design works flawlessly across all devices.",
+      "rating": 5
+    },
+    {
+      "name": "Emily Rodriguez",
+      "role": "Marketing Director, GrowthCo",
+      "avatar": "ER",
+      "text": "The conversion rates improved significantly after we implemented this design. Highly recommended!",
+      "rating": 5
+    }
+  ],
+  "pricing": [
+    {
+      "name": "Basic",
+      "price": 19,
+      "period": "month",
+      "features": [
+        "Up to 5 projects",
+        "10GB storage",
+        "Email support",
+        "Basic analytics"
+      ],
+      "popular": false
+    },
+    {
+      "name": "Standard",
+      "price": 49,
+      "period": "month",
+      "features": [
+        "Up to 25 projects",
+        "100GB storage",
+        "Priority support",
+        "Advanced analytics",
+        "Team collaboration"
+      ],
+      "popular": true
+    },
+    {
+      "name": "Premium",
+      "price": 99,
+      "period": "month",
+      "features": [
+        "Unlimited projects",
+        "1TB storage",
+        "24/7 phone support",
+        "Custom analytics",
+        "Advanced integrations",
+        "White-label options"
+      ],
+      "popular": false
+    }
+  ],
+  "navigation": [
+    { "text": "Home", "href": "#home" },
+    { "text": "Features", "href": "#features" },
+    { "text": "Pricing", "href": "#pricing" },
+    { "text": "Testimonials", "href": "#testimonials" },
+    { "text": "Contact", "href": "#contact" }
+  ]
+}
