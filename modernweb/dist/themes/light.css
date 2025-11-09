@@ -1,0 +1,19 @@
+/* Light theme and color presets */
+
+:root, [data-theme="light"] {
+  --bg-surface: #ffffff;
+  --bg-section: #F9FAFB;
+  --bg-hero: #F5F7FF;
+  --bg-footer: #0B1220;
+  --text-body: #111827;
+  --text-muted: #6B7280;
+  --nav: #ffffff;
+  --divider: rgba(17,24,39,0.1);
+  --accent: #3B82F6;
+}
+
+/* Color presets set gradient tokens; can be combined with dark */
+[data-color="blue"] { --gradient-from: #3B82F6; --gradient-to: #8B5CF6; --accent: #3B82F6; }
+[data-color="purple"] { --gradient-from: #8B5CF6; --gradient-to: #A78BFA; --accent: #8B5CF6; }
+[data-color="teal"] { --gradient-from: #0EA5A4; --gradient-to: #14B8A6; --accent: #0EA5A4; }
+
