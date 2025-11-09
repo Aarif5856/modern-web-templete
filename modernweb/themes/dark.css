@@ -1,0 +1,18 @@
+/* Dark theme and shared tokens */
+
+[data-theme="dark"] {
+  --bg-surface: #0F172A;   /* slate-900 */
+  --bg-section: #0B1220;
+  --bg-hero: #0B1220;
+  --bg-footer: #070B16;
+  --text-body: #E5E7EB;
+  --text-muted: #9CA3AF;
+  --nav: rgba(15,23,42,0.9);
+  --divider: rgba(148,163,184,0.18);
+}
+
+/* Color presets still drive gradient tokens; readable on dark */
+[data-theme="dark"][data-color="blue"] { --gradient-from: #3B82F6; --gradient-to: #8B5CF6; }
+[data-theme="dark"][data-color="purple"] { --gradient-from: #8B5CF6; --gradient-to: #A78BFA; }
+[data-theme="dark"][data-color="teal"] { --gradient-from: #0EA5A4; --gradient-to: #14B8A6; }
+

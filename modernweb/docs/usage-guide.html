@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ModernWeb — Usage Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 24px; line-height: 1.6; color: #111827; }
+    .container { max-width: 920px; margin: 0 auto; }
+    h1,h2,h3 { line-height: 1.2; }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    h2 { margin-top: 2rem; }
+    code, pre { background: #0f172a; color: #e5e7eb; padding: 0.2rem 0.35rem; border-radius: 6px; }
+    pre { padding: 1rem; overflow: auto; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    img { width: 100%; border: 1px solid #e5e7eb; border-radius: 10px; }
+    .muted { color: #6b7280; }
+    .kbd { border: 1px solid #e5e7eb; padding: 2px 6px; border-radius: 6px; font-size: 0.9em; }
+  </style>
+  <meta name="description" content="How to use and customize the ModernWeb template." />
+</head>
+<body>
+  <div class="container">
+    <h1>ModernWeb — Usage Guide</h1>
+    <p class="muted">A quick visual walkthrough for customizing and deploying the template.</p>
+
+    <h2>Overview</h2>
+    <p>All content is configured in <code>config.json</code> and rendered dynamically. You can toggle dark mode and switch color presets directly in the navbar. For local edits, serve the folder with a static server (or the template will fall back to inline JSON).</p>
+
+    <h2>Screenshots</h2>
+    <div class="grid">
+      <div>
+        <h3>Hero</h3>
+        <img src="../assets/screenshots/hero.png" alt="Hero screenshot placeholder" />
+      </div>
+      <div>
+        <h3>Features</h3>
+        <img src="../assets/screenshots/features.png" alt="Features screenshot placeholder" />
+      </div>
+      <div>
+        <h3>Pricing</h3>
+        <img src="../assets/screenshots/pricing.png" alt="Pricing screenshot placeholder" />
+      </div>
+      <div>
+        <h3>Testimonials</h3>
+        <img src="../assets/screenshots/testimonials.png" alt="Testimonials screenshot placeholder" />
+      </div>
+    </div>
+
+    <h2>Editing Content</h2>
+    <pre>{
+  "brand": "ModernWeb",
+  "tagline": "Build Something Amazing Today",
+  "description": "Create stunning websites...",
+  "features": [ {"icon": "fa-rocket", "title": "Fast Performance", "text": "..."} ],
+  "pricing": [ {"plan": "Standard", "price": 49, "popular": true, "features": ["..."]} ],
+  "testimonials": [ {"name": "Sarah Anderson", "text": "Saved us weeks."} ]
+}</pre>
+
+    <h2>Dark Mode & Color Presets</h2>
+    <p>Use the navbar toggle for dark mode and the dropdown for Blue/Purple/Teal presets. Values are stored in <code>localStorage</code> so your choice persists across reloads.</p>
+
+    <h2>Build for Production</h2>
+    <p>Requires Node 18+.</p>
+    <pre>cd modernweb
+npm install
+npm run build</pre>
+    <p>This outputs optimized assets to <code>dist/</code> and creates <code>modernweb-v1.0.zip</code> for marketplaces.</p>
+
+    <h2>Deploy</h2>
+    <ul>
+      <li><strong>Netlify</strong>: Use <code>netlify.toml</code> (publish: <code>dist</code>)</li>
+      <li><strong>Vercel</strong>: Use <code>vercel.json</code> or import as static site</li>
+      <li><strong>GitHub Pages</strong>: Upload the contents of <code>dist/</code></li>
+    </ul>
+
+    <p class="muted">Tip: Use <span class="kbd">Ctrl</span> + <span class="kbd">F</span> in <code>index.html</code> to locate containers (<code>#features-grid</code>, <code>#pricing-grid</code>, <code>#testimonials-grid</code>) if you want to hard-code markup instead of JSON.</p>
+  </div>
+</body>
+</html>
+

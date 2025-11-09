@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-color="blue">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ModernWeb — Build Something Amazing Today</title>
+  <meta name="description" content="Create stunning websites with our modern, responsive template for SaaS, startups, and agencies." />
+  <meta name="keywords" content="SaaS, landing page, Tailwind CSS, template, startup, responsive" />
+  <meta property="og:title" content="ModernWeb — Build Something Amazing Today" />
+  <meta property="og:description" content="Create stunning websites with our modern, responsive template." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/screenshots/hero.png" />
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="themes/light.css" />
+  <link rel="stylesheet" href="themes/dark.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="font-inter antialiased bg-surface text-body">
+  <!-- Navbar -->
+  <nav class="navbar fixed top-0 w-full z-50 bg-nav/80 backdrop-blur-md border-b border-divider transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Brand -->
+        <a href="#home" class="flex items-center gap-3">
+          <img src="assets/logo.svg" alt="Logo" class="h-8 w-8" />
+          <span id="brand-name" class="text-xl md:text-2xl font-bold gradient-text">ModernWeb</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#home" class="nav-link text-muted hover:text-accent transition-colors">Home</a>
+          <a href="#features" class="nav-link text-muted hover:text-accent transition-colors">Features</a>
+          <a href="#pricing" class="nav-link text-muted hover:text-accent transition-colors">Pricing</a>
+          <a href="#testimonials" class="nav-link text-muted hover:text-accent transition-colors">Testimonials</a>
+          <a href="#contact" class="nav-link text-muted hover:text-accent transition-colors">Contact</a>
+        </div>
+
+        <!-- Controls -->
+        <div class="hidden md:flex items-center gap-3">
+          <label for="color-preset" class="sr-only">Color preset</label>
+          <select id="color-preset" class="select-preset">
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="teal">Teal</option>
+          </select>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <a href="#pricing" class="btn-primary gradient-bg hidden sm:inline-flex">Get Started</a>
+        </div>
+
+        <!-- Mobile button -->
+        <button class="mobile-menu-btn md:hidden text-muted hover:text-accent">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu hidden md:hidden bg-surface border-t border-divider">
+      <div class="px-4 py-3 space-y-2">
+        <a href="#home" class="block py-2 nav-link">Home</a>
+        <a href="#features" class="block py-2 nav-link">Features</a>
+        <a href="#pricing" class="block py-2 nav-link">Pricing</a>
+        <a href="#testimonials" class="block py-2 nav-link">Testimonials</a>
+        <a href="#contact" class="block py-2 nav-link">Contact</a>
+        <div class="flex items-center gap-2 pt-2">
+          <select id="color-preset-mobile" class="select-preset flex-1">
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="teal">Teal</option>
+          </select>
+          <button id="theme-toggle-mobile" class="theme-toggle flex-none" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="pt-24 md:pt-28 pb-16 bg-hero relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 id="hero-title" class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 fade-seq">
+        Build Something <span class="gradient-text">Amazing</span> Today
+      </h1>
+      <p id="hero-description" class="text-lg md:text-2xl text-muted max-w-3xl mx-auto mb-8 fade-seq">
+        Create stunning websites with our modern, responsive template.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#pricing" class="btn-primary gradient-bg animate-float">Get Started</a>
+        <a href="#features" class="btn-secondary">View Features</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-16 bg-surface">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">Features</h2>
+        <p class="text-muted">Discover what makes this template perfect for your business.</p>
+      </div>
+      <div id="features-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-16 bg-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">What Customers Say</h2>
+        <p class="text-muted">Real feedback from happy users.</p>
+      </div>
+      <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-16 bg-surface">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">Simple Pricing</h2>
+        <p class="text-muted">Choose a plan that fits your needs.</p>
+      </div>
+      <div id="pricing-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer id="contact" class="bg-footer text-muted py-12 border-t border-divider">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <div class="flex items-center gap-3 mb-3">
+            <img src="assets/logo.svg" alt="Logo" class="h-6 w-6" />
+            <span id="brand-name-footer" class="font-semibold">ModernWeb</span>
+          </div>
+          <p class="text-sm">Build modern websites faster with a clean, accessible, and responsive template.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#home" class="hover:text-accent">Home</a></li>
+            <li><a href="#features" class="hover:text-accent">Features</a></li>
+            <li><a href="#pricing" class="hover:text-accent">Pricing</a></li>
+            <li><a href="#testimonials" class="hover:text-accent">Testimonials</a></li>
+            <li><a href="#contact" class="hover:text-accent">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Follow</h4>
+          <div class="flex gap-3">
+            <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-divider mt-10 pt-6 text-center text-xs">
+        <span>&copy; <span id="year"></span> <span id="brand-name-copy">ModernWeb</span>. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button id="scrollTop" class="scroll-to-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- Inline config fallback (used when file:// blocks fetch) -->
+  <script id="config-inline" type="application/json">
+  {
+    "brand": "ModernWeb",
+    "tagline": "Build Something Amazing Today",
+    "description": "Create stunning websites with our modern, responsive template.",
+    "features": [
+      {"icon": "fa-rocket", "title": "Fast Performance", "text": "Lightning-fast loading speeds."},
+      {"icon": "fa-mobile-screen", "title": "Mobile First", "text": "Looks perfect on all devices."},
+      {"icon": "fa-lock", "title": "Secure & Safe", "text": "Enterprise-grade protection."},
+      {"icon": "fa-gear", "title": "Easy to Use", "text": "Intuitive and user-friendly."}
+    ],
+    "pricing": [
+      {"plan": "Basic", "price": 19, "features": ["Up to 5 projects", "10GB storage", "Email support", "Basic analytics"]},
+      {"plan": "Standard", "price": 49, "popular": true, "features": ["Up to 25 projects", "100GB storage", "Priority support", "Advanced analytics", "Team collaboration"]},
+      {"plan": "Premium", "price": 99, "features": ["Unlimited projects", "1TB storage", "24/7 phone support", "White-label options"]}
+    ],
+    "testimonials": [
+      {"name": "Sarah Anderson", "role": "CEO, TechStart", "text": "Saved us weeks of work.", "rating": 5},
+      {"name": "Michael Johnson", "role": "Founder, CreativeStudio", "text": "Flawless design.", "rating": 5},
+      {"name": "Emily Rodriguez", "role": "Marketing Director, GrowthCo", "text": "Higher conversions!", "rating": 5}
+    ]
+  }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
