@@ -126,6 +126,59 @@ body, .feature-card, .testimonial-card, .pricing-card, .navbar, .btn-primary, .b
 /* Print */
 @media print { nav, .scroll-to-top { display: none !important; } body { background: #fff; color: #000; } }
 
+/* ===== Animated Background Orbs ===== */
+#contact {
+  position: relative;
+  overflow: hidden;
+}
+#contact::before,
+#contact::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+  animation: floatOrbs 18s ease-in-out infinite alternate;
+}
+#contact::before {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  left: -100px;
+  background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+}
+#contact::after {
+  width: 450px;
+  height: 450px;
+  bottom: -120px;
+  right: -120px;
+  background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
+  animation-delay: 4s;
+}
+@keyframes floatOrbs {
+  from { transform: translateY(0) scale(1); opacity: 0.35; }
+  to { transform: translateY(-40px) scale(1.05); opacity: 0.55; }
+}
+
+/* Slightly lift the form for better contrast */
+#contact form {
+  background: rgba(15, 23, 42, 0.7);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(99,102,241,0.25);
+}
+.dark #contact form {
+  background: rgba(15, 23, 42, 0.75);
+}
+
+/* Smooth fade-in for text */
+#contact h2, #contact p, #contact form {
+  animation: fadeInUp 1s ease both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Map brand tokens to existing gradient tokens for safety */
 :root { --brand-1: var(--gradient-from, #3B82F6); --brand-2: var(--gradient-to, #8B5CF6); }
 
