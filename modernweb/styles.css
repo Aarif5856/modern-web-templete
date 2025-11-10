@@ -125,3 +125,47 @@ body, .feature-card, .testimonial-card, .pricing-card, .navbar, .btn-primary, .b
 
 /* Print */
 @media print { nav, .scroll-to-top { display: none !important; } body { background: #fff; color: #000; } }
+
+/* Map brand tokens to existing gradient tokens for safety */
+:root { --brand-1: var(--gradient-from, #3B82F6); --brand-2: var(--gradient-to, #8B5CF6); }
+
+/* ===== Contact Section Enhancements ===== */
+#contact {
+  background: linear-gradient(180deg, #f9fafb 0%, #eef2ff 100%);
+  position: relative;
+}
+.dark #contact {
+  background: radial-gradient(circle at top, rgba(59,130,246,.15), transparent 40%),
+              linear-gradient(180deg, #0b1020 0%, #111827 100%);
+}
+#contact form {
+  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.6);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+.dark #contact form {
+  background: rgba(17,24,39,0.6);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+#contact input, #contact textarea {
+  transition: border .25s ease, box-shadow .25s ease, background .25s ease;
+}
+#contact input:focus, #contact textarea:focus {
+  border-color: var(--brand-1);
+  box-shadow: 0 0 0 3px rgba(59,130,246,.25);
+  background: rgba(255,255,255,0.9);
+}
+.dark #contact input:focus, .dark #contact textarea:focus {
+  background: rgba(15,23,42,0.9);
+  box-shadow: 0 0 0 3px rgba(139,92,246,.35);
+}
+#contact button.btn-primary {
+  background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
+  box-shadow: 0 10px 25px rgba(99,102,241,.35);
+}
+#contact button.btn-primary:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
