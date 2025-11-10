@@ -214,12 +214,17 @@ body, .feature-card, .testimonial-card, .pricing-card, .navbar, .btn-primary, .b
 }
 #contact input, #contact textarea {
   transition: border .25s ease, box-shadow .25s ease, background .25s ease;
+  color: var(--text-body, #111827);
+  caret-color: var(--brand-1, #3B82F6);
 }
 #contact input:focus, #contact textarea:focus {
   border-color: var(--brand-1);
   box-shadow: 0 0 0 3px rgba(59,130,246,.25);
   background: rgba(255,255,255,0.9);
 }
+.dark #contact input, .dark #contact textarea { color: #E5E7EB; }
+#contact input::placeholder, #contact textarea::placeholder { color: #94A3B8; }
+.dark #contact input::placeholder, .dark #contact textarea::placeholder { color: #9CA3AF; }
 .dark #contact input:focus, .dark #contact textarea:focus {
   background: rgba(15,23,42,0.9);
   box-shadow: 0 0 0 3px rgba(139,92,246,.35);
