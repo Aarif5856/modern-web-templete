@@ -3,6 +3,9 @@
 /* Base font */
 .font-inter { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
 
+/* Smooth scrolling for anchor links */
+html { scroll-behavior: smooth; }
+
 /* Semantic color tokens mapped to CSS variables from themes */
 :root {
   --bg-surface: #ffffff;

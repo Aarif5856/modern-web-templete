@@ -384,6 +384,38 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     checkBrowserSupport();
+
+    // CONTACT FORM HANDLER (minimal)
+    document.getElementById('contactForm')?.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const form = e.target;
+      const status = document.getElementById('formStatus');
+      status.textContent = 'Sending...';
+      status.style.color = '#64748b';
+
+      // Replace this with your own Formspree endpoint (free)
+      const endpoint = 'https://formspree.io/f/your_form_id';
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(data)
+        });
+        if(res.ok){
+          status.textContent = '✅ Message sent successfully!';
+          status.style.color = '#10b981';
+          form.reset();
+        } else {
+          throw new Error('Request failed');
+        }
+      } catch(err){
+        console.error(err);
+        status.textContent = '❌ Something went wrong. Try again later.';
+        status.style.color = '#ef4444';
+      }
+    });
     
     // ===========================
     // UTILITY FUNCTIONS
