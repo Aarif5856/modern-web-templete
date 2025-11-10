@@ -26,6 +26,8 @@
 
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
+    // Ensure Tailwind dark: styles apply as well
+    document.documentElement.classList.toggle('dark', theme === 'dark');
     const toggles = [$('#theme-toggle i'), $('#theme-toggle-mobile i')].filter(Boolean);
     toggles.forEach(i => {
       i.classList.remove('fa-moon', 'fa-sun');
@@ -114,7 +116,10 @@
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => e.isIntersecting && e.target.classList.add('visible'));
     }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+    // Card-level fades
     $$('.feature-card, .testimonial-card, .pricing-card').forEach(el => { el.classList.add('fade-in'); obs.observe(el); });
+    // Section-level reveals
+    $$('.reveal').forEach(el => { obs.observe(el); });
   }
 
   // Scroll-to-top
@@ -294,4 +299,3 @@
     window.addEventListener('load', () => document.body.classList.add('loaded'));
   });
 })();
-

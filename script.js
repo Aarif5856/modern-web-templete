@@ -3,6 +3,27 @@
 // Description: Interactive functionality for the modern web template
 
 document.addEventListener('DOMContentLoaded', function() {
+    // ===========================
+    // THEME PERSISTENCE (dark class on <html>)
+    // ===========================
+    try {
+        const THEME_KEY = 'mw:theme';
+        const storedTheme = localStorage.getItem(THEME_KEY);
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light');
+        document.documentElement.classList.toggle('dark', initialTheme === 'dark');
+        localStorage.setItem(THEME_KEY, initialTheme);
+        ['#theme-toggle', '#theme-toggle-mobile'].forEach(sel => {
+            const btn = document.querySelector(sel);
+            if (!btn) return;
+            btn.addEventListener('click', () => {
+                const isDark = document.documentElement.classList.toggle('dark');
+                localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light');
+            });
+        });
+    } catch (e) {
+        console.warn('Theme persistence unavailable:', e);
+    }
     
     // ===========================
     // MOBILE MENU FUNCTIONALITY
@@ -96,6 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
         el.classList.add('fade-in');
         observer.observe(el);
     });
+    // Section-level reveals
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     
     // ===========================
     // FEATURE CARDS HOVER EFFECTS
@@ -119,27 +142,32 @@ document.addEventListener('DOMContentLoaded', function() {
     
     pricingCards.forEach(card => {
         const button = card.querySelector('button');
-        
         if (button) {
             button.addEventListener('click', function() {
-                // Add ripple effect
-                const ripple = document.createElement('span');
-                ripple.classList.add('ripple');
-                this.appendChild(ripple);
-                
-                // Remove ripple after animation
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
-                
                 // Simulate action (replace with actual functionality)
-                console.log('Pricing plan selected:', card.querySelector('h3').textContent);
-                
-                // Show success message (you can customize this)
+                const planTitle = card.querySelector('h3') ? card.querySelector('h3').textContent : 'Plan';
+                console.log('Pricing plan selected:', planTitle);
                 showNotification('Plan selected! Redirecting to checkout...', 'success');
             });
         }
     });
+
+    // ===========================
+    // UNIVERSAL RIPPLE FOR CTA + PRICING BUTTONS
+    // ===========================
+    document.addEventListener('click', function(e) {
+        const target = e.target.closest('.btn-primary, .btn-secondary, .pricing-card button');
+        if (!target) return;
+        const existing = target.querySelector('.ripple');
+        if (existing) existing.remove();
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple';
+        const rect = target.getBoundingClientRect();
+        ripple.style.left = `${e.clientX - rect.left}px`;
+        ripple.style.top = `${e.clientY - rect.top}px`;
+        target.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+    }, { passive: true });
     
     // ===========================
     // CTA BUTTON INTERACTIONS
@@ -246,6 +274,16 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             removeNotification(notification);
         }, 5000);
+    }
+
+    // Helper to dismiss notifications with transition
+    function removeNotification(notification) {
+        try {
+            notification.style.transform = 'translateX(120%)';
+            notification.addEventListener('transitionend', () => notification.remove(), { once: true });
+        } catch (_) {
+            if (notification && notification.remove) notification.remove();
+        }
     }
     
     function removeNotification(notification) {

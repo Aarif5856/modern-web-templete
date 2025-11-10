@@ -78,6 +78,10 @@ body, .feature-card, .testimonial-card, .pricing-card, .navbar, .btn-primary, .b
 .fade-seq { opacity: 0; animation: fadeSeq 0.8s ease forwards; }
 @keyframes fadeSeq { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
+/* Section reveal */
+.reveal { opacity: 0; transform: translateY(16px); transition: all 0.6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
 /* Float animation */
 @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 .animate-float { animation: floaty 3s ease-in-out infinite; }
