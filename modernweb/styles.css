@@ -145,14 +145,14 @@ body, .feature-card, .testimonial-card, .pricing-card, .navbar, .btn-primary, .b
   height: 400px;
   top: -100px;
   left: -100px;
-  background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+  background: radial-gradient(circle, var(--brand-1, #3b82f6) 0%, transparent 70%);
 }
 #contact::after {
   width: 450px;
   height: 450px;
   bottom: -120px;
   right: -120px;
-  background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
+  background: radial-gradient(circle, var(--brand-2, #8b5cf6) 0%, transparent 70%);
   animation-delay: 4s;
 }
 @keyframes floatOrbs {
@@ -177,6 +177,16 @@ body, .feature-card, .testimonial-card, .pricing-card, .navbar, .btn-primary, .b
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile and motion preferences */
+@media (max-width: 640px) {
+  #contact::before, #contact::after { width: 260px; height: 260px; filter: blur(80px); opacity: 0.25; }
+  #contact::after { bottom: -100px; right: -100px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #contact::before, #contact::after { animation: none; }
+  #contact h2, #contact p, #contact form { animation: none; }
 }
 
 /* Map brand tokens to existing gradient tokens for safety */
